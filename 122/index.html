@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message" />
+        <input type="text" v-bind:value="message" />
+        <div v-bind:text-content.prop="message"></div>
+        <div v-bind:scroll-top.prop="scroll"></div>
+        <p>{{ message }}</p>
+        <transition>
+            <ol>
+                <li v-if="show" v-on:click="onClickEvent" v-for="item in list">
+                    <span></span>
+                    <p>{{item}}</p>
+                </li>
+            </ol>
+        </transition>
+        <button v-on:click="handleClick">{{btn}}</button>
+        <button v-on:click="show=!show">{{btn2}}</button>
+        <button v-on:click="addEle">새 과일 추가</button>
+        <button v-on:click="removeList">과일 제거</button>
+        <button v-on:click="increment"> 카운터 </button>
+        <button v-on:click="AudioParam"> 카운터 </button>
+        <transition>
+            <p v-if="show">Hello Vue.js!</p>
+            <div>{{ count }}</div>
+        </transition>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

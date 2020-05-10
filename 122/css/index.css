@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.v-enter-active, .v-leave-active {
+    transition: opacity 1s;
+    background-color: #f0f;
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
+
+span {
+  opacity: 1;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+  position: relative;
+}
+
+span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.on span::after {
+	background-color: #fc0;
+}
+
+@keyframes aaa {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

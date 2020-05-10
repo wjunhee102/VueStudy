@@ -12,7 +12,11 @@ let app = new Vue({
     el: '#app',
     data() {
         return {
-           items: [
+            dropdown: {
+                on : true,
+                off : false
+            },
+            items: [
                {
                    id: 1,
                    image: 'https://picsum.photos/210/118/?image=1',
